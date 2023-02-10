@@ -10,8 +10,8 @@
 class ReadFile {
 
 public:
-    void readfile(std::string inFile, std::string outFile, std::string *array);
-
+    void read_file(std::string inFile, std::string outFile, std::string *array);
+    void print_file(std::string outFile, std::string *array);
 };
 
 

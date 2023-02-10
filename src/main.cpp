@@ -8,10 +8,13 @@ int main(int argc, char *argv[]) {
         Stack Stack;
         ReadFile readFile;
         string myArray[51];
-        readFile.readfile(argv[1], argv[2], myArray);
-        for (int i = 0; i < 51; i++) {
-            cout << myArray[i] << endl;
-        }
+        readFile.read_file(argv[1], argv[2], myArray);
+
+
+        readFile.print_file(argv[2], myArray);
+//        for (int i = 0; i < 51; i++) {
+//            cout << myArray[i] << endl;
+//        }
     }
 
 

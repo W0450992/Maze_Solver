@@ -12,6 +12,12 @@ private:
     Node* m_first {nullptr};
 
 public:
+
+    void push(Cell cell);
+    void pop();
+    Cell peek();
+
+     ~Stack();
     friend std::ostream &operator<<(std::ostream &output, Stack &stack);
 };
 

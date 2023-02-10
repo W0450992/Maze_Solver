@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void ReadFile::readfile(std::string inFile, std::string outFile, std::string *array) {
+void ReadFile::read_file(std::string inFile, std::string outFile, std::string *array) {
     try {
         char character; // declaring string
         ifstream myFileIn; // file in stream reading only
@@ -42,7 +42,7 @@ void ReadFile::readfile(std::string inFile, std::string outFile, std::string *ar
             cout << "File closed" << endl;
 
         } else {
-            cout << "Input file failed to open. Will make new File on Exit." << endl;
+            cout << "Input file failed to open." << endl;
 
         }
 //
@@ -56,4 +56,15 @@ void ReadFile::readfile(std::string inFile, std::string outFile, std::string *ar
     catch (...) {
         cout << "General error" << endl;
     }
+}
+
+void ReadFile::print_file(std::string outFile, std::string *array) {
+    std::ofstream myFileOut;
+    myFileOut.open(outFile, std::ios::out);
+    for (int i = 0; i < 51; i++) {
+        myFileOut << array[i] << endl;
+        cout << array[i] << endl;
+    }
+    myFileOut.close();
+
 }

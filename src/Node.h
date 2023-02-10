@@ -7,6 +7,8 @@
 
 
 class Node {
+
+public:
     Cell m_data;
     Node* m_next {nullptr};
 
