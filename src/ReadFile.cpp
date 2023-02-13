@@ -60,7 +60,7 @@ void ReadFile::read_file(std::string inFile, std::string outFile, std::string *a
 
 void ReadFile::print_file(std::string outFile, std::string *array) {
     std::ofstream myFileOut;
-    myFileOut.open(outFile, std::ios::out);
+    myFileOut.open("../solved/"+ outFile, std::ios::out);
     for (int i = 0; i < 51; i++) {
         myFileOut << array[i] << endl;
         cout << array[i] << endl;
