@@ -16,8 +16,9 @@ public:
     void push(Cell cell);
     void pop();
     Cell peek();
+    //void start_maze(std::string *array);
 
-     ~Stack();
+     //~Stack();
     friend std::ostream &operator<<(std::ostream &output, Stack &stack);
 };
 

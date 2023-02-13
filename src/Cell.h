@@ -10,7 +10,17 @@ class Cell {
 
 public:
     int x;
+
+    int getX() const;
+
+    void setX(int x);
+
+    int getY() const;
+
+    void setY(int y);
+
     int y;
+    char symbol = '#';
 };
 
 
