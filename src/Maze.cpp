@@ -37,61 +37,61 @@ void Maze::start_maze(std::string *array, Stack stack) {
 //                if (i > 0) {
             if (j < 50 && i < 50 && i > 0 && j > 0) {
                 if (stack.peek().y < 100) {
-                char right = array[stack.peek().x][stack.peek().y + 1];
-                char down = array[stack.peek().x + 1][stack.peek().y];
-                char left = array[stack.peek().x][stack.peek().y - 1];
-                char up = array[stack.peek().x - 1][stack.peek().y];
-                char test = array[1][1];
-                int x = stack.peek().x;
-                int y = stack.peek().y;
-                if (right != '+' && right != '-' && right != '|' && right != '#') {
+                    char right = array[stack.peek().x][stack.peek().y + 1];
+                    char down = array[stack.peek().x + 1][stack.peek().y];
+                    char left = array[stack.peek().x][stack.peek().y - 1];
+                    char up = array[stack.peek().x - 1][stack.peek().y];
+                    char test = array[1][1];
+                    int x = stack.peek().x;
+                    int y = stack.peek().y;
+                    if (right != '+' && right != '-' && right != '|' && right != '#') {
 
-                    stack.push({stack.peek().x, stack.peek().y + 1, '#'});
-                    array[stack.peek().x][stack.peek().y] = '#';
-                    vector.push_back({stack.peek().x, stack.peek().y, '#'});
+                        stack.push({stack.peek().x, stack.peek().y + 1, '#'});
+                        array[stack.peek().x][stack.peek().y] = '#';
+                        vector.push_back({stack.peek().x, stack.peek().y, '#'});
 
-                } else if (down != '+' && down != '-' && down != '|' && down != '#') {
+                    } else if (down != '+' && down != '-' && down != '|' && down != '#') {
 
-                    stack.push({stack.peek().x + 1, stack.peek().y, '#'});
-                    array[stack.peek().x][stack.peek().y] = '#';
-                    vector.push_back({stack.peek().x, stack.peek().y, '#'});
+                        stack.push({stack.peek().x + 1, stack.peek().y, '#'});
+                        array[stack.peek().x][stack.peek().y] = '#';
+                        vector.push_back({stack.peek().x, stack.peek().y, '#'});
 
-                } else if (left != '+' && left != '-' && left != '|' && left != '#') {
-                    if (vector2[vector2.size()].x == stack.peek().x &&
-                        vector2[vector2.size()].y == stack.peek().y) {
-                        bool thing = true;
-                    }
-
-                    stack.push({stack.peek().x, stack.peek().y - 1, '#'});
-                    array[stack.peek().x][stack.peek().y] = '#';
-                    vector.push_back({stack.peek().x, stack.peek().y, '#'});
-
-                } else if (up != '+' && up != '-' && up != '|' && up != '#') {
-
-                    stack.push({stack.peek().x - 1, stack.peek().y, '#'});
-                    array[stack.peek().x][stack.peek().y] = '#';
-                    vector.push_back({stack.peek().x, stack.peek().y, '#'});
-
-                } else {
-
-                    vector2.push_back({stack.peek().x, stack.peek().y, '#'});
-
-                    for (int k = 0; k < vector2.size(); k++) {
-                        if (stack.peek().y == vector2[k].y && stack.peek().x == vector2[k].x) {
-
-                            array[stack.peek().x][stack.peek().y] = '-';
-                            stack.pop();
-                            //vector2.push_back({stack.peek().x, stack.peek().y, '#'});
-
+                    } else if (left != '+' && left != '-' && left != '|' && left != '#') {
+                        if (vector2[vector2.size()].x == stack.peek().x &&
+                            vector2[vector2.size()].y == stack.peek().y) {
+                            bool thing = true;
                         }
-                    }
-                    while (!vector2.empty()) {
-                        vector2.pop_back();
-                    }
 
+                        stack.push({stack.peek().x, stack.peek().y - 1, '#'});
+                        array[stack.peek().x][stack.peek().y] = '#';
+                        vector.push_back({stack.peek().x, stack.peek().y, '#'});
+
+                    } else if (up != '+' && up != '-' && up != '|' && up != '#') {
+
+                        stack.push({stack.peek().x - 1, stack.peek().y, '#'});
+                        array[stack.peek().x][stack.peek().y] = '#';
+                        vector.push_back({stack.peek().x, stack.peek().y, '#'});
+
+                    } else {
+
+                        vector2.push_back({stack.peek().x, stack.peek().y, '#'});
+
+                        for (int k = 0; k < vector2.size(); k++) {
+                            if (stack.peek().y == vector2[k].y && stack.peek().x == vector2[k].x) {
+
+                                array[stack.peek().x][stack.peek().y] = '-';
+                                stack.pop();
+                                //vector2.push_back({stack.peek().x, stack.peek().y, '#'});
+
+                            }
+                        }
+                        while (!vector2.empty()) {
+                            vector2.pop_back();
+                        }
+
+                    }
                 }
             }
-        }
 
 
 
